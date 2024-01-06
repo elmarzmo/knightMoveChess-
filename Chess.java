@@ -34,19 +34,16 @@ public class Chess {
       char[] le = {'a','b','c','d','e','f','g','h'};
       char[] nu = {'1','2','3','4','5','6','7','8'};
       char staLe = start.charAt(0);
-      System.out.println(staLe);
+      //System.out.println(staLe);
       char stNum = start.charAt(1);
       ArrayList res = new ArrayList();
       for(int i = 0; i<le.length;i++) {
-    	  if(staLe==le[i]) {
+    	  if(le[i]==staLe) {
     		   idxLe =i; 
-     		 // System.out.println(idxLe);
-
-    		  break;
+     		 //System.out.println(idxLe);
     	  }
     	  if(stNum==nu[i]) {
     		   idxNum =i; 
-    		  break;
     	  }
     	  
       }
@@ -56,7 +53,8 @@ public class Chess {
     		  char str2= nu[idxNum+2];
     		  str = ""+str1+str2;
     	  res.add(str);
-    	 // System.out.println(str);
+    	  //System.out.println(idxLe);
+    	 // System.out.println("str: "+str);
       }
       }
       if(!(idxLe+1>7)) {
@@ -151,7 +149,7 @@ public class Chess {
           return res;
 	}
 	public static void test() {
-		System.out.println(knight("f3","g5"));
+		System.out.println("count "+knight("f3","g2"));
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
