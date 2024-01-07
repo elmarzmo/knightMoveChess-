@@ -121,16 +121,16 @@ public class Chess {
     	    		  }      }
       }
 
-          if(!(idxLe-1>7)) {
+          if(idxLe-1>0) {
         	  if(!(idxNum+2>7)) {
-        		  char str1 = le[idxLe+1];
+        		  char str1 = le[idxLe-1];
         		  char str2= nu[idxNum+2];
         		  str = ""+str1+str2;
         		  if(!res.contains(str)) {
         	    	  res.add(str);
         	    		  }          }
           }
-          if(!(idxLe-1>7)) {
+          if(idxLe-1>0) {
         	  if(!(idxNum-2>7)) {
         		  char str1 = le[idxLe-1];
         		  char str2= nu[idxNum-2];
@@ -139,16 +139,16 @@ public class Chess {
         	    	  res.add(str);
         	    		  }          }
           }
-          if(!(idxLe-2>7)) {
+          if(idxLe-2>0) {
         	  if(!(idxNum+1>7)) {
-        		  char str1 = le[idxLe+2];
+        		  char str1 = le[idxLe-2];
         		  char str2= nu[idxNum+1];
         		  str = ""+str1+str2;
         		  if(!res.contains(str)) {
         	    	  res.add(str);
         	    		  }          }
           }
-          if(!(idxLe-2>7)) {
+          if(idxLe-2>0) {
         	  if(!(idxNum-1>7)) {
         		  char str1 = le[idxLe-2];
         		  char str2= nu[idxNum-1];
@@ -164,7 +164,7 @@ public class Chess {
           return res;
 	}
 	public static void test() {
-		System.out.println("count "+knight("f3","d3"));
+		System.out.println("count "+knight("f3","g5"));
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
