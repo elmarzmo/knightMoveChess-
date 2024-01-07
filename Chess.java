@@ -14,17 +14,26 @@ import java.util.ArrayList;
 public class Chess {
 	public static int knight(String start, String  finish) {
         // Your code here!
-		
+		String check="";
 		int count=0;
-		ArrayList arl = nextMove(start);
-		while(!arl.contains(finish)) {
+		while(!check.equals(finish)) {
+		ArrayList<String> arl = nextMove(start);
+		for(String s : arl) {
+			if(s.equals(finish) ) {
+				check = finish;
+				break;
+			}
+		}
+			
 			count++;
 		
 		for(int i=0; i<arl.size(); i++) {
 			arl=	nextMove(arl.get(i).toString());
 		}
 		}
+		
         return count;
+	
 	}
 
 	private static ArrayList nextMove(String start) {
@@ -59,16 +68,18 @@ public class Chess {
     	 //System.out.println("str: "+str);
       }
       }
-      if(!(idxNum-2>7)) {
+      if(idxNum-2>=0) {
+    	  if(!(idxLe+1>=8)) {
     		  char str1 = le[idxLe+1];
     		  char str2= nu[idxNum-2];
     		  str = ""+str1+str2;
     		  if(!res.contains(str)) {
     	    	  res.add(str);
-    	    		  }      
+    	    		  }  
+    	  }
       }
-      if(!(idxLe+2>7)) {
-    	  if(!(idxNum+1>7)) {
+      if(idxLe+2<8) {
+    	  if(!(idxLe+1>=8)) {
     		  char str1 = le[idxLe+2];
     		  char str2= nu[idxNum+1];
     		  str = ""+str1+str2;
@@ -84,7 +95,7 @@ public class Chess {
     	    	  res.add(str);
     	    		  }      }
       }
-      if(!(idxLe+1>7)) {
+      if(!(idxLe+1>=8)) {
     	  if(!(idxNum+2>7)) {
     		  char str1 = le[idxLe+1];
     		  char str2= nu[idxNum+2];
@@ -93,7 +104,7 @@ public class Chess {
     	    	  res.add(str);
     	    		  }      }
       }
-      if(!(idxLe+1>7)) {
+      if(!(idxLe+1>=8)) {
     	  if(!(idxNum-2>7)) {
     		  char str1 = le[idxLe+1];
     		  char str2= nu[idxNum-2];
@@ -103,7 +114,7 @@ public class Chess {
     	    		  }      }
       }
       if(!(idxLe+2>7)) {
-    	  if(!(idxNum+1>7)) {
+    	  if(!(idxLe+1>=8)) {
     		  char str1 = le[idxLe+2];
     		  char str2= nu[idxNum+1];
     		  str = ""+str1+str2;
@@ -140,7 +151,7 @@ public class Chess {
         	    		  }          }
           }
           if(idxLe-2>0) {
-        	  if(!(idxNum+1>7)) {
+        	  if(!(idxLe+1>=8)) {
         		  char str1 = le[idxLe-2];
         		  char str2= nu[idxNum+1];
         		  str = ""+str1+str2;
@@ -164,7 +175,7 @@ public class Chess {
           return res;
 	}
 	public static void test() {
-		System.out.println("count "+knight("f3","g5"));
+		System.out.println("count "+knight("a5","d6"));
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
