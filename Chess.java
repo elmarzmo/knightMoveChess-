@@ -21,7 +21,7 @@ public class Chess {
 			count++;
 		
 		for(int i=0; i<arl.size(); i++) {
-			nextMove(arl.get(i).toString());
+			arl=	nextMove(arl.get(i).toString());
 		}
 		}
         return count;
@@ -47,71 +47,78 @@ public class Chess {
     	  }
     	  
       }
-      if(!(idxLe+1>7)) {
+      if(idxLe+1<8) {
     	  if(!(idxNum+2>7)) {
     		  char str1 = le[idxLe+1];
     		  char str2= nu[idxNum+2];
     		  str = ""+str1+str2;
+    		  if(!res.contains(str)) {
     	  res.add(str);
+    		  }
     	  //System.out.println(idxLe);
-    	 // System.out.println("str: "+str);
+    	 //System.out.println("str: "+str);
       }
       }
-      if(!(idxLe+1>7)) {
-    	  if(!(idxNum-2>7)) {
+      if(!(idxNum-2>7)) {
     		  char str1 = le[idxLe+1];
     		  char str2= nu[idxNum-2];
     		  str = ""+str1+str2;
-    	  res.add(str);
-      }
+    		  if(!res.contains(str)) {
+    	    	  res.add(str);
+    	    		  }      
       }
       if(!(idxLe+2>7)) {
     	  if(!(idxNum+1>7)) {
     		  char str1 = le[idxLe+2];
     		  char str2= nu[idxNum+1];
     		  str = ""+str1+str2;
-    	  res.add(str);
-      }
-      }
-      if(!(idxLe+2>7)) {
+    		  if(!res.contains(str)) {
+    	    	  res.add(str);
+    	    		  }      }
+      
     	  if(!(idxNum-1>7)) {
     		  char str1 = le[idxLe+2];
     		  char str2= nu[idxNum-1];
     		  str = ""+str1+str2;
-    	  res.add(str);
-      }
+    		  if(!res.contains(str)) {
+    	    	  res.add(str);
+    	    		  }      }
       }
       if(!(idxLe+1>7)) {
     	  if(!(idxNum+2>7)) {
     		  char str1 = le[idxLe+1];
     		  char str2= nu[idxNum+2];
     		  str = ""+str1+str2;
-    	  res.add(str);
-      }
+    		  if(!res.contains(str)) {
+    	    	  res.add(str);
+    	    		  }      }
       }
       if(!(idxLe+1>7)) {
     	  if(!(idxNum-2>7)) {
     		  char str1 = le[idxLe+1];
     		  char str2= nu[idxNum-2];
     		  str = ""+str1+str2;
-    	  res.add(str);
-      }
+    		  if(!res.contains(str)) {
+    	    	  res.add(str);
+    	    		  }      }
       }
       if(!(idxLe+2>7)) {
     	  if(!(idxNum+1>7)) {
     		  char str1 = le[idxLe+2];
     		  char str2= nu[idxNum+1];
     		  str = ""+str1+str2;
-    	  res.add(str);
-      }
+    		  if(!res.contains(str)) {
+    	    	  res.add(str);
+    	    		  }      }
       }
       if(!(idxLe+2>7)) {
     	  if(!(idxNum-1>7)) {
     		  char str1 = le[idxLe+2];
     		  char str2= nu[idxNum-1];
     		  str = ""+str1+str2;
-    	  res.add(str);
-      }
+    		  if(!res.contains(str)) {
+    	    	  res.add(str);
+    	    		  }      }
       }
 
           if(!(idxLe-1>7)) {
@@ -119,37 +126,45 @@ public class Chess {
         		  char str1 = le[idxLe+1];
         		  char str2= nu[idxNum+2];
         		  str = ""+str1+str2;
-        	  res.add(str);
-          }
+        		  if(!res.contains(str)) {
+        	    	  res.add(str);
+        	    		  }          }
           }
           if(!(idxLe-1>7)) {
         	  if(!(idxNum-2>7)) {
-        		  char str1 = le[idxLe+1];
+        		  char str1 = le[idxLe-1];
         		  char str2= nu[idxNum-2];
         		  str = ""+str1+str2;
-        	  res.add(str);
-          }
+        		  if(!res.contains(str)) {
+        	    	  res.add(str);
+        	    		  }          }
           }
           if(!(idxLe-2>7)) {
         	  if(!(idxNum+1>7)) {
         		  char str1 = le[idxLe+2];
         		  char str2= nu[idxNum+1];
         		  str = ""+str1+str2;
-        	  res.add(str);
-          }
+        		  if(!res.contains(str)) {
+        	    	  res.add(str);
+        	    		  }          }
           }
           if(!(idxLe-2>7)) {
         	  if(!(idxNum-1>7)) {
-        		  char str1 = le[idxLe+2];
+        		  char str1 = le[idxLe-2];
         		  char str2= nu[idxNum-1];
         		  str = ""+str1+str2;
-        	  res.add(str);
+        		  if(!res.contains(str)) {
+        	    	  res.add(str);
+        	    		  }          }
           }
+          
+          for(int i =0 ; i<res.size(); i++) {
+        	  System.out.println(res.get(i));
           }
           return res;
 	}
 	public static void test() {
-		System.out.println("count "+knight("f3","g2"));
+		System.out.println("count "+knight("f3","d3"));
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
